@@ -8,11 +8,228 @@ body{
 }
 a{
     text-decoration: none;
-    color: #FFFFFF;
+    color: #faf8f8;
 }
 footer{
     background-color: #C47A6D;
 }
 #Logo{
     background-color: #FFFFFF;
+}
+
+
+/* 
+   Estilos para página Productos------------------------------------------------------------------------------------------------------------------ */
+body.productos {
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  padding-bottom: 3rem;
+}
+
+/* ----- Layout catálogo ----- */
+body.productos .catalogo .container {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 260px 1fr;
+}
+
+@media (max-width: 900px) {
+  body.productos .catalogo .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----- Filtros ----- */
+body.productos .filtros form {
+  position: sticky;
+  top: 80px;
+}
+
+body.productos .filtros details {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+body.productos .filtros summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+body.productos .filtros ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+body.productos .filtros button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+body.productos .filtros button:hover {
+  background: #1e293b;
+}
+
+/* ----- Toolbar resultados ----- */
+body.productos .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+body.productos .toolbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+body.productos .orden select,
+body.productos .orden button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+body.productos .orden button {
+  background: #0f172a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ----- lista de productos ----- */
+body.productos .product-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+body.productos .product-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+body.productos .product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body.productos .product-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 12px;
+}
+
+body.productos .thumb {
+  aspect-ratio: 1/1;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.productos .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.productos .title {
+  font-size: 1.1rem;
+  margin: 8px 0 4px;
+}
+
+body.productos .subtitle {
+  color: #475569;
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+}
+
+body.productos .price-block {
+  padding: 0 12px 12px;
+}
+
+body.productos .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+body.productos .installments {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+body.productos .shipping {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #16a34a;
+}
+
+body.productos .ratings {
+  padding: 0 12px 12px;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+/* ----- Acciones en tarjeta ----- */
+body.productos .product-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+body.productos .btn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body.productos .btn.primary {
+  background: #0f172a;
+  color: #fff;
+  border-color: #0f172a;
+}
+
+body.productos .btn.primary:hover {
+  background: #1e293b;
+}
+
+body.productos .btn.ghost {
+  background: #fff;
+  color: #0f172a;
+}
+
+body.productos .btn.ghost:hover {
+  background: #f1f5f9;
 }
