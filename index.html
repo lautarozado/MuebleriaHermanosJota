@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hermanos Jota</title>
-         <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        
     </head>
     <body>
         <header>
@@ -14,27 +15,41 @@
             </h1>
 
             <nav>
-                <a href="index.html">Inicio</a>
-                <a href="productos.html">Productos</a>
-                <a href="contacto.html">Contacto</a>
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                </ul>
             </nav>
+
+            <form class="search" action="productos.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Buscar</label>
+                <input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
+                <button type="submit">Buscar</button>
+            </form>
         </header>
         <main>
          <article>
             <section>
                 <h2>Bienvenidos...</h2>
                 <div>
-                    <h3></h3>
-                    <p></p>
+                    <h3>Quienes somos?</h3>
+                    <p>**Futuro carusel de imagenes??**</p>
                     <p></p>
                     <img src="" alt="" height="">
                 </div>
                 <div>
-                    <h3></h3>
+                    <h3>Nuestra historia</h3>
                     <p></p>
                     <p></p>
                     <img src="" alt="" height="">
-                </div>                
+                </div>         
+                <div>
+                    <h3>Que ofrecemos?...</h3>
+                    <p></p>
+                    <p></p>
+                    <img src="" alt="" height="">
+                </div>                           
             </section>
          </article>   
         </main>
