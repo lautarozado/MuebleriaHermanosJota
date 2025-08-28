@@ -16,9 +16,8 @@
 <h3> Contexto de Negocio: El Desafío de "Mueblería Hermanos Jota"
      <h4>La Historia</h4>
 <p align="center">
-<img src="assets/img/logo.svg" height="80">
-</p>
-     <img src="assets/img/Escritorio Costa.png" height="100">
+    <img src="assets/img/Escritorio Costa.png" height="100">
+</p>    
 <p>La Mueblería Hermanos Jota es un taller familiar con más de 30 años de tradición en el diseño y la
 fabricación de muebles de madera de autor. Son conocidos en su ciudad por la alta calidad
 de sus materiales y por un estilo que combina la robustez de lo artesanal con líneas de diseño
