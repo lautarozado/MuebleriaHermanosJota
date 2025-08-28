@@ -22,3 +22,152 @@
 </body>
 </html>
 
+<!-- productos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mueblería Hermanos Jota — Productos</title>
+  <meta name="description" content="Catálogo de muebles: sillones, mesas, sillas, placares y más. Envíos y cuotas.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="productos">
+  <header class="site-header">
+    <div class="branding">
+      <a href="index.html" class="brand">
+        <h1>
+        <img src="assets/img/logo.svg" alt="Icono Hermanos Jota" height="60px" id="Logo">
+        Mueblería Hermanos Jota
+        </h1>
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a aria-current="page" href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Buscador básico sin JS -->
+    <form class="search" action="productos.html" method="get" role="search">
+      <label for="q" class="visually-hidden">Buscar</label>
+      <input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
+      <button type="submit">Buscar</button>
+    </form>
+  </header>
+
+ 
+
+  <main class="catalogo" id="contenido">
+    <!-- Lateral de filtros (funciona con method="get") -->
+    <aside class="filtros" aria-label="Filtrar">
+      <form action="productos.html" method="get">
+        <details open>
+          <summary>Categoría</summary>
+          <ul>
+            <li><label><input type="checkbox" name="cat" value="sillones"> Sillones</label></li>
+            <li><label><input type="checkbox" name="cat" value="mesas"> Mesas</label></li>
+            <li><label><input type="checkbox" name="cat" value="sillas"> Sillas</label></li>
+            <li><label><input type="checkbox" name="cat" value="placares"> Placares</label></li>
+          </ul>
+        </details>
+
+        <details open>
+          <summary>Precio</summary>
+          <div class="rango-precio">
+            <label>Desde <input type="number" name="min" inputmode="numeric" placeholder="0"></label>
+            <label>Hasta <input type="number" name="max" inputmode="numeric" placeholder="999999"></label>
+          </div>
+        </details>
+
+     
+
+        <button type="submit">Aplicar filtros</button>
+      </form>
+    </aside>
+
+    <!-- Resultados -->
+    <section class="resultados">
+      <header class="toolbar">
+        <h1>Productos</h1>
+        <form action="productos.html" method="get" class="orden">
+          <label for="orden">Ordenar por</label>
+          <select id="orden" name="orden">
+            <option value="relevancia">Relevancia</option>
+            <option value="precio_asc">Precio: menor a mayor</option>
+            <option value="precio_desc">Precio: mayor a menor</option>
+            <option value="nuevos">Más nuevos</option>
+          </select>
+          <button type="submit">Aplicar</button>
+        </form>
+      </header>
+
+      <!-- Grilla de tarjetas -->
+      <ul class="product-grid" aria-live="polite">
+        <li>
+          <article class="product-card" itemscope itemtype="https://schema.org/Product">
+            <a class="product-link" href="">
+              <figure class="thumb">
+                <img src="p"
+                     alt="Sillón Roma 3 cuerpos color gris"
+                     width="480" height="480" loading="lazy" itemprop="image">
+              </figure>
+              <h2 class="title" itemprop="name">Sillón Roma 3 Cuerpos</h2>
+              <p class="subtitle">Tela Antimanchas • Gris</p>
+            </a>
+            <div class="price-block" itemprop="offers" itemscope itemtype="">
+              <meta itemprop="priceCurrency" content="ARS">
+              <span class="price"><span class="currency">ARS</span> <span class="amount" itemprop="price">459999</span></span>
+              <link itemprop="availability" href="">En stock
+              <p class="installments">12x $45.999 sin interés</p>
+              <p class="shipping badge">Envío gratis</p>
+            </div>
+            <div class="ratings" aria-label="Valoraciones">★★★★☆ <span class="count">(128)</span></div>
+            <footer class="product-actions">
+              <a class="btn primary" href="">Ver detalle</a>
+              <a class="btn ghost" href="">Comparar</a>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="" itemscope itemtype="">
+            <a class="product-link" href="">
+              <figure class="thumb">
+                <img src=""
+                     alt="Sillón Verona esquinero chenille beige"
+                     width="480" height="480" loading="lazy" itemprop="image">
+              </figure>
+              <h2 class="title" itemprop="name">Sillón Verona Esquinero</h2>
+              <p class="subtitle">Chenille • Beige</p>
+            </a>
+            <div class="price-block" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <meta itemprop="priceCurrency" content="ARS">
+              <span class="price"><span class="currency">ARS</span> <span class="amount" itemprop="price">699999</span></span>
+              <link itemprop="availability" href="">Stock limitado
+              <p class="installments">6x $139.999</p>
+              <p class="shipping">Retiro en tienda</p>
+            </div>
+            <div class="ratings" aria-label="Valoraciones">★★★★★ <span class="count">(54)</span></div>
+            <footer class="product-actions">
+              <a class="btn primary" href="producto-sillon-verona.html">Ver detalle</a>
+              <a class="btn ghost" href="comparar.html?add=sillon-verona">Comparar</a>
+            </footer>
+          </article>
+        </li>
+
+        <!-- Repite más <li> con tus productos -->
+      </ul>
+
+    
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><small>Hermanos Jota © Grupo 14 — Escuela Innovación</small></p>
+  </footer>
+</body>
+</html>
