@@ -6,17 +6,37 @@
         <title>Hermanos Jota - Contacto</title>
          <link rel="stylesheet" href="assets/css/styles.css">
     </head>
-    <body>
-        <header>
-            <h1>
-            <img src="assets/img/logo.svg" alt="Icono Hermanos Jota" height="60px" id="Logo">
-            Muebleria Hermanos Jota
-            </h1>
+    <body class="productos">
+        <header class="site-header">
+            <div class="branding">
+              <a href="index.html" class="brand">
+              <h1>
+              <img src="assets/img/logo.svg" alt="Icono Hermanos Jota" height="60px" id="Logo">
+                Mueblería Hermanos Jota
+              </h1>
+            </a>
+            </div>
 
-            <nav>
+             <nav class="site-nav" aria-label="Principal">
                 <a href="index.html">Inicio</a>
                 <a href="productos.html">Productos</a>
                 <a href="contacto.html">Contacto</a>
+                <a href="">Carrito
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </a>
+                <a href="">Login
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                    </svg>
+                </a>
+
+                <form class="search" action="productos.html" method="get" role="search">
+                  <label for="q" class="visually-hidden">Buscar</label>
+                  <input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
+                  <button type="submit">Buscar</button>
+                </form>
             </nav>
         </header>
 
@@ -26,13 +46,13 @@
       <h2>¡Dejanos tu mensaje!</h2>
       <form action="enviar.php" method="post">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" required><br>
 
         <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required><br>
 
         <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br>
 
         <button type="submit">Enviar</button>
       </form>
@@ -40,59 +60,25 @@
 
     <section>
       <h2>Información de contacto</h2>
-      <p>📍 Dirección: Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
+      <p>📍 Dirección: <b>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal</b>,
 Ciudad Autónoma de Buenos Aires
 Argentina </p>
-      <p>📞 Teléfono: +54 11 4567-8900</p>
-      <p>✉️ Email general: info@hermanosjota.com.ar</p>
-      <p>✉️ Email ventas: ventas@hermanosjota.com.ar</p>
+      <p>📞 Teléfono: <b>+54 11 4567-8900</b></p>
+      <p>Instagram: <a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=4E0E3576451B211BF5BDB072303DFEAB&f_hash=109CD47DF9F905C138FF5104397A4D55">
+        <b>@hermanosjota_ba</b></a></p>
+      <p>✉️ Email general: <b>info@hermanosjota.com.ar</b></p>
+      <p>✉️ Email ventas: <b>ventas@hermanosjota.com.ar</b></p>
     </section>
+    <div>
+        <p class="Multimedia">
+        <iframe  title= "map"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.2168256706846!2d-58.40735388811463!3d-34.62396057283415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccae2a0c04a2f%3A0x77f381af8f0ca1fa!2sAv.%20San%20Juan%202847%2C%20C1232AAK%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1756442326135!5m2!1ses!2sar" width="600" height="450" allowfullscreen="true" loading="lazy"></iframe>
+        </p>
+    </div>
   </main>
 
   <!-- Pie de página -->
-  <footer>
-    <p>&copy; 
-Hermanos Jota © Grupo 14 Escuela Innovacion</p>
-  </footer>
-
+<footer class="site-footer">
+    <p>&copy; <small>Hermanos Jota © Grupo 14 — Escuela Innovación</small></p>
+</footer>
 </body>
-</html>
-
-            <nav>
-                <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-
-            <form class="search" action="productos.html" method="get" role="search">
-                <label for="q" class="visually-hidden">Buscar</label>
-                <input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
-                <button type="submit">Buscar</button>
-            </form>
-        </header>
-        <main>
-         <article>
-            <section>
-                <h2>Puedes encontrarnos en... </h2>
-                <div>
-                    <h3>Nuestra ubicacion...</h3>
-                    <p></p>
-                    <p></p>
-                    <img src="" alt="" height="">
-                </div>
-                <div>
-                    <h3>Nuestras redes...</h3>
-                    <p></p>
-                    <p></p>
-                    <img src="" alt="" height="">
-                </div>                
-            </section>
-         </article>   
-        </main>
-        <footer>
-            <i>Hermanos Jota ©      Grupo 14     Escuela Innovacion</i>
-        </footer>
-    </body>
 </html>

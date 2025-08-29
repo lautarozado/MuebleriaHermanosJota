@@ -16,7 +16,13 @@ footer{
 #Logo{
     background-color: #FFFFFF;
 }
-
+.Multimedia{
+  text-align: center;
+ }
+ a .site-nav{
+  margin: 50px;
+  padding: 5px;
+ }
 
 /* 
    Estilos para página Productos------------------------------------------------------------------------------------------------------------------ */
