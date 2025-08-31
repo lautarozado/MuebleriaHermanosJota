@@ -242,15 +242,73 @@ body.productos .btn.ghost:hover {
 
 
 
-.boton_enviar {
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex; 
+  /* Permite que las columnas se envuelvan en pantallas pequeñas */
+  flex-wrap: wrap; 
+  /* Añade un espacio entre las dos columnas */
+  gap: 40px; 
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fffdfd;
+  padding: 40px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; 
+  /* Ancho mínimo para que no se vea mal en pantallas angostas */
+  min-width: 400px;
+}
+
+.contacto-info {
+  background-color: #fffdfd;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 100%;
-  background-color:#A0522D;
-  color: white;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #e0d1d1;
+  border-radius: 5px;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.boton-enviar {
   padding: 12px;
+  font-size: 1rem;
+  background-color: #b75e36;
+  color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  width: 100%; 
+  margin-bottom: 20px;
+}
+
+.boton-enviar:hover {
+  background-color: #9c4a2d;
 }
