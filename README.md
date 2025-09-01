@@ -7,6 +7,7 @@
     <li>Luciano Illuminati <a href="https://github.com/Luci-fer666"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a></li> 
     <li>Lola Fioramanti <a href="https://github.com/lolafioramanti"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a></li> 
     <li>Eliana Ayelen Fuchs <a href="https://github.com/ElianaAFuchs"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a></li> 
+    <li>Luciana Gutheim <a href="https://github.com/lucianagutheim-sudo"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a></li>
     </ul></div>
 
 <h2>Proyecto e-commerce para la Mueblería Hermanos Jota.</h2>
