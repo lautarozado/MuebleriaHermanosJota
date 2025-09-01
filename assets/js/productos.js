@@ -37,7 +37,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Aparador%20Uspallata.png" // %20 representa un espacio
+        "imagen": "assets/Aparador Uspallata.png" // %20 representa un espacio
     },
     {
         "nombre": "Biblioteca Recoleta",
