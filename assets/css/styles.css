@@ -1,3 +1,16 @@
+.branding {
+  display: flex; /* Convierte el contenedor en un flex container */
+  align-items: center; /* Centra verticalmente el logo y el texto */
+  gap: 10px; /* Añade un pequeño espacio entre el logo y el texto */
+}
+
+.logo-text {
+  /* Añade estilos para el texto si lo necesitas */
+  font-size: 2rem; 
+  color: #f5f2f0;
+  margin: 0; /* Elimina cualquier margen por defecto para evitar espacios extra */
+}
+
 header{
     background-color:#A0522D;
     color:#FFFFFF ;
@@ -6,10 +19,16 @@ body{
     background-color:#F5E6D3;
     font-family: "inter", sans-serif;
 }
-a{
-    text-decoration: none;
-    color: #faf8f8;
+.site-nav a {
+  text-decoration: none;
+  color: #faf8f8;
 }
+
+main a {
+  color: #080808; 
+}
+
+
 footer{
     background-color: #C47A6D;
 }
@@ -311,4 +330,32 @@ textarea {
 
 .boton-enviar:hover {
   background-color: #9c4a2d;
+}
+
+.contacto-info .fa-instagram {
+  color: #E1306C; /* Un rosa similar al de Instagram */
+  margin-right: 8px; /* Pequeño espacio a la derecha del icono */
+  font-size: 1.5rem; 
+}
+
+.contacto-info .fa-map-marker-alt {
+  color: rgb(240, 10, 10);
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.contacto-info .fa-envelope {
+  color: #023e7e;
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.contacto-info .fa-whatsapp {
+  color: forestgreen;
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+main a:hover {
+  color: #c47a6d; /* Un color de tu paleta que resalte */
 }
