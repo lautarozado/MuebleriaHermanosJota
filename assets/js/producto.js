@@ -15,8 +15,8 @@ if (id === null || !productos[id]) {
     detalle.innerHTML = `
         <h1>${producto.nombre}</h1>
         <img src="${producto.imagen}" alt="${producto.nombre}" width="300">
-        <p>${producto.descripcion}</p>
-        <p><strong>Precio:</strong> $${producto.precio}</p>
+        <p class="descripcion-producto-ind">${producto.descripcion}</p>
+        <p class="precio-ind"><strong>Precio (ARS):</strong> $${producto.precio}</p>
     `;
 
     caracteristicas.innerHTML = "";

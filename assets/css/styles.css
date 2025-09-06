@@ -363,8 +363,8 @@ main a:hover {
 }
 
 
-/*  Estilos para la página Producto */
 
+/*  Estilos para la página Producto */
 #producto-individual {
   display: grid;
   grid-template-columns: 1fr 1fr; 
@@ -399,23 +399,19 @@ main a:hover {
   color: #333;
 }
 
-#producto-detalle p {
-  font-size: 1rem;
-  line-height: 1.5;
+#producto-detalle .descripcion-producto-ind{
+  margin-top: 20px;
   color: #555;
 }
 
-#producto-detalle strong {
-  color: #222;
-}
 
 /* Lista de características */
 #producto-caracteristicas-container {
   display: flex;
   flex-direction: column; 
   justify-content: center;
-  align-content: center;
-  padding: 1rem;
+  align-items: center;
+  padding: 20px; 
   background: #fafafa;
   border: 1px solid #eee;
   border-radius: 8px;
@@ -426,10 +422,18 @@ main a:hover {
 #producto-caracteristicas li {
   padding: 2%;
   border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-self: start;
   color: #444;
+}
+
+#producto-caracteristicas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 #producto-caracteristicas li:last-child {
