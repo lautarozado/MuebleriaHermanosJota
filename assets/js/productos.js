@@ -360,14 +360,12 @@ productos.forEach((producto, index) => {
     li.classList.add('producto-item'); // le agrego una clase por si queremos modificar cosas específicas después
 
     li.innerHTML = `
-    <a href="producto.html?id=${index}">
-        <img src="${producto.imagen}" alt="${producto.nombre}" width="200">
-        <h3>${producto.nombre}</h3>
-        <p class="precio-producto"><strong>ARS</strong> $${producto.precio}</p>
-        <p class="descripcion-producto">${producto.descripcion}</p>
-        
-    </a>
-        `;
+    <img src="${producto.imagen}" alt="${producto.nombre}" width="200">
+    <h3><a href="producto.html?id=${encodeURIComponent(index)}">${producto.nombre}</a></h3>
+    <p class="precio-producto"><strong>ARS</strong> $${producto.precio}</p>
+    <p class="descripcion-producto">${producto.descripcion}</p>
+`;
+
 
 
     listaProductos.appendChild(li);
