@@ -359,5 +359,84 @@ textarea {
 }
 
 main a:hover {
-  color: #c47a6d; /* Un color de tu paleta que resalte */
+  color: #c47a6d; 
+}
+
+
+/*  Estilos para la página Producto */
+
+#producto-individual {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto; 
+}
+
+/* Detalles del producto */
+#producto-detalle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+#producto-detalle img {
+  place-self: center; 
+  width: 60%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+#producto-detalle h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+#producto-detalle p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+#producto-detalle strong {
+  color: #222;
+}
+
+/* Lista de características */
+#producto-caracteristicas-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  height: fit-content; 
+}
+
+/* Ítems de la lista */
+#producto-caracteristicas li {
+  padding: 2%;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  color: #444;
+}
+
+#producto-caracteristicas li:last-child {
+  border-bottom: auto;
+}
+
+#producto-caracteristicas li strong {
+  font-weight: 600;
+  color: #222;
 }
