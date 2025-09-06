@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hermanos Jota - Carrito</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="carrito">
+  <header class="site-header">
+    <div class="branding">
+      <a href="index.html" class="brand">
+        <h1>
+          <img src="assets/img/logo.svg" alt="Icono Hermanos Jota" height="60" id="Logo">
+          Mueblería Hermanos Jota
+        </h1>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carrito.html">Carrito <span id="cart-count" aria-live="polite">0</span>
+        <!-- ícono opcional -->
+      </a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <h1>Carrito de compras</h1>
+
+    <section class="resumen-carrito">
+      <ul id="carrito-lista" class="carrito-grid" aria-live="polite"></ul>
+
+      <div class="total">
+        <p>Total: <strong><span id="carrito-total">ARS $0</span></strong></p>
+        <button id="vaciar-carrito" class="btn danger">Vaciar carrito</button>
+      </div>
+    </section>
+
+    <p class="nota">* En esta fase el carrito es local (solo tu navegador). En fases siguientes se puede conectar a backend.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p><small>Hermanos Jota © Grupo 14 — Escuela Innovación</small></p>
+  </footer>
+
+  <!-- Orden de scripts: datos → carrito base → render de carrito -->
+  <script src="assets/js/productos.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/carrito.js"></script>
+</body>
+</html>
