@@ -440,3 +440,72 @@ main a:hover {
   font-weight: 600;
   color: #222;
 }
+
+
+/* Estilo para la pagina Productos */
+.catalogo {
+  max-width: auto;
+  margin-top: 10px;
+  padding: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  padding: 60px;
+  list-style: none;
+  
+  max-width: auto ;
+  max-height: auto;
+}
+
+/* Cada tarjeta de producto */
+.product-grid li {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Imagen del producto */
+.product-grid li img {
+  width: 70%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  align-self: center;
+  justify-self: center;
+}
+
+/* Nombre del producto */
+.product-grid li h3 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  color: #333;
+}
+
+/* Detalles del producto */
+.product-grid li .descripcion-producto {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Precio */
+.product-grid li .precio-producto {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+}

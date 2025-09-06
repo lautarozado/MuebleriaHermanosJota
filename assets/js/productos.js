@@ -362,9 +362,10 @@ productos.forEach((producto, index) => {
     li.innerHTML = `
     <a href="producto.html?id=${index}">
         <img src="${producto.imagen}" alt="${producto.nombre}" width="200">
-        <h2>${producto.nombre}</h2>
-        <p>${producto.descripcion}</p>
-        <p><strong>Precio:</strong> $${producto.precio}</p>
+        <h3>${producto.nombre}</h3>
+        <p class="precio-producto"><strong>ARS</strong> $${producto.precio}</p>
+        <p class="descripcion-producto">${producto.descripcion}</p>
+        
     </a>
         `;
 
