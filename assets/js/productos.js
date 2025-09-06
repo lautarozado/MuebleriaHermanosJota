@@ -1,13 +1,4 @@
 
-function ignorarVacios(obj) {
-    for (let key in obj) {
-    if (obj[key] === null) {
-        delete obj[key];
-    }
-    return obj;
-    }
-}
-
 
 const productos = [
     {
@@ -359,11 +350,6 @@ const productos = [
         "imagen": "assets/img/logo.svg" // no hay foto de la cama, podríamos hacer una con IA?
     }
 ]
-
-
-productos.forEach(producto => ignorarVacios(producto));
-console.log(productos);
-
 
 
 // Lógica para subir los productos al HTML
