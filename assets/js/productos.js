@@ -37,7 +37,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Aparador Uspallata.png" // %20 representa un espacio
+        "imagen": "assets/img/Aparador Uspallata.png"
     },
     {
         "nombre": "Biblioteca Recoleta",
@@ -66,7 +66,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Biblioteca%20Recoleta.png"
+        "imagen": "assets/img/Biblioteca Recoleta.png"
     },
     {
         "nombre": "Butaca Mendoza",
@@ -95,7 +95,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Butaca%20Mendoza.png"        
+        "imagen": "assets/img/Butaca Mendoza.png"        
     },    
     {
         "nombre": "Sillón Copacabana",
@@ -124,7 +124,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Sillón%20Copacabana.png"
+        "imagen": "assets/img/Sillón Copacabana.png"
     },
     {
         "nombre": "Mesa de Centro Araucaria",
@@ -153,7 +153,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Mesa%20de%20Centro%20Araucaria.png"
+        "imagen": "assets/img/Mesa de Centro Araucaria.png"
     },
     {
         "nombre": "Mesa de Noche Aconcagua",
@@ -182,36 +182,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Mesa%20de%20Noche%20Aconcagua.png"
-    },
-    {
-        "nombre": "Cama Neuquén",
-        "precio": 12345,
-        "descripcion": "Cama plataforma con cabecero flotante tapizado en lino natural y estructura de madera maciza. Su diseño minimalista y sofisticado crea un ambiente de serenidad y elegancia, perfecto para dormitorios contemporáneos que buscan paz y simplicidad.",
-        "medidas": "160 × 200 × 90 cm",
-        "materiales": "Roble macizo FSC®, tapizado lino",
-        "acabado": "Aceite natural, tapizado premium",
-        "colchon": "Compatible con colchón 160×200",
-        "apilables": null,
-        "tapizado": null,
-        "confort": null,
-        "relleno": null,
-        "rotacion": null,
-        "regulacion": null,
-        "garantia": null,
-        "certificacion": null,
-        "estructura": null,
-        "capacidad": null,
-        "modulares": null,
-        "almacenamiento": null,
-        "peso": null,
-        "cargaMaxima": null,
-        "extension": null,
-        "caracteristicas": "Cabecero flotante acolchado",
-        "sostenibilidad": null,
-        "incluye": null,
-        "cables": null,
-        "imagen": null
+        "imagen": "assets/img/Mesa de Noche Aconcagua.png"
     },
     {
         "nombre": "Sofá Patagonia",
@@ -240,7 +211,7 @@ const productos = [
         "sostenibilidad": "Materiales 100% reciclables",
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Sofá%20Patagonia.png"
+        "imagen": "assets/img/Sofá Patagonia.png"
     },
     {
         "nombre": "Mesa Comedor Pampa",
@@ -269,7 +240,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Mesa%20Comedor%20Pampa.png"
+        "imagen": "assets/img/Mesa Comedor Pampa.png"
     },
     {
         "nombre": "Sillas Córdoba",
@@ -298,7 +269,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": "Set de 4 sillas",
         "cables": null,
-        "imagen": "assets/Sillas%20Córdoba.png"
+        "imagen": "assets/img/Sillas Córdoba.png"
     },
     {
         "nombre": "Escritorio Costa",
@@ -327,7 +298,7 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": "Pasacables integrado",
-        "imagen": "assets/Escritorio%20Costa.png"
+        "imagen": "assets/img/Escritorio Costa.png"
     },
     {
         "nombre": "Silla de Trabajo Belgrano",
@@ -356,10 +327,61 @@ const productos = [
         "sostenibilidad": null,
         "incluye": null,
         "cables": null,
-        "imagen": "assets/Silla%20de%20Trabajo%20Belgrano.png"
+        "imagen": "assets/img/Silla de Trabajo Belgrano.png"
+    },
+    {
+        "nombre": "Cama Neuquén",
+        "precio": 12345,
+        "descripcion": "Cama plataforma con cabecero flotante tapizado en lino natural y estructura de madera maciza. Su diseño minimalista y sofisticado crea un ambiente de serenidad y elegancia, perfecto para dormitorios contemporáneos que buscan paz y simplicidad.",
+        "medidas": "160 × 200 × 90 cm",
+        "materiales": "Roble macizo FSC®, tapizado lino",
+        "acabado": "Aceite natural, tapizado premium",
+        "colchon": "Compatible con colchón 160×200",
+        "apilables": null,
+        "tapizado": null,
+        "confort": null,
+        "relleno": null,
+        "rotacion": null,
+        "regulacion": null,
+        "garantia": null,
+        "certificacion": null,
+        "estructura": null,
+        "capacidad": null,
+        "modulares": null,
+        "almacenamiento": null,
+        "peso": null,
+        "cargaMaxima": null,
+        "extension": null,
+        "caracteristicas": "Cabecero flotante acolchado",
+        "sostenibilidad": null,
+        "incluye": null,
+        "cables": null,
+        "imagen": "assets/img/logo.svg" // no hay foto de la cama, podríamos hacer una con IA?
     }
 ]
 
 
 productos.forEach(producto => ignorarVacios(producto));
 console.log(productos);
+
+
+
+// Lógica para subir los productos al HTML
+const listaProductos = document.querySelector('#lista-productos');
+
+productos.forEach((producto, index) => {
+    const li = document.createElement('li');
+    li.classList.add('producto-item'); // le agrego una clase por si queremos modificar cosas específicas después
+
+    li.innerHTML = `
+    <a href="producto.html?id=${index}">
+        <img src="${producto.imagen}" alt="${producto.nombre}" width="200">
+        <h2>${producto.nombre}</h2>
+        <p>${producto.descripcion}</p>
+        <p><strong>Precio:</strong> $${producto.precio}</p>
+    </a>
+        `;
+
+
+    listaProductos.appendChild(li);
+})
