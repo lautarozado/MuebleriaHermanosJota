@@ -33,3 +33,6 @@ se mantiene, pero les cuesta mucho atraer a un público más joven y expandir su
 más allá de su localidad. Su presencia online se limita a una página de Instagram que manejan
 esporádicamente. Para sobrevivir y crecer, han decidido dar el salto digital y los han
 contratado a ustedes para construir su primera plataforma de e-commerce.</p>
+
+
+https://muebleria1212.netlify.app/
