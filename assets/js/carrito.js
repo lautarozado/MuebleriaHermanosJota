@@ -1,4 +1,4 @@
-// assets/js/carrito.js
+
 document.addEventListener('DOMContentLoaded', () => {
   const cont = document.getElementById('carrito-lista');
   const totalEl = document.getElementById('carrito-total');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!cont || !totalEl) return;
 
   function render() {
-    const items = window.getCartItems(); // [{id, qty}]
+    const items = window.getCartItems(); 
     cont.innerHTML = '';
 
     // Si no hay productos cargados aún, salir
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     items.forEach(({ id, qty }) => {
       const p = data.find(x => Number.isFinite(x.id) ? x.id === id : data.indexOf(x) === id)
-              || data[id]; // fallback si usan índice como id
+              || data[id]; 
       if (!p) return;
 
       const subtotal = (p.precio || 0) * (qty || 0);
