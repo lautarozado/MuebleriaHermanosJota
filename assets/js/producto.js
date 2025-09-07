@@ -49,7 +49,7 @@
   caracteristicas.innerHTML = "";
   try {
     Object.entries(producto).forEach(([key, value]) => {
-      if (key !== "nombre" && key !== "imagen" && key !== "descripcion" && key !== "precio" && value !== null && value !== undefined) {
+      if (key !== "id" && key !== "nombre" && key !== "imagen" && key !== "descripcion" && key !== "precio" && value !== null && value !== undefined) {
         const li = document.createElement("li");
         li.innerHTML = `<strong>${escapeHTML(key)}:</strong> ${escapeHTML(String(value))}`;
         caracteristicas.appendChild(li);
