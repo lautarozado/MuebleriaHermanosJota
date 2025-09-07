@@ -7,46 +7,69 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="productos">
-     <header class="site-header">
-            <div class="branding">
-              <a href="index.html" class="brand">
-              <h1>
-              <img src="assets/img/logo.svg" alt="Icono Hermanos Jota" height="60px" id="Logo">
-                Mueblería Hermanos Jota
-              </h1>
-            </a>
-            </div>
+    <header class="site-header">
+    	<div class="branding">
+      		<a href="index.html" class="brand">
+          		<img id="logo" src="assets/img/logo.svg" alt="Icono Hermanos Jota">
+      		</a>
+    	</div>
 
-            <nav class="site-nav" aria-label="Principal">
-                <a href="index.html">Inicio</a>
-                <a href="productos.html">Productos</a>
-                <a href="contacto.html">Contacto</a>
-                <a href="carrito.html">Carrito <span id="cart-count" aria-live="polite">0</span></a>
+    	<nav class="site-nav" aria-label="Principal">
+			<a href="index.html">Inicio</a>
+			<a href="productos.html">Productos</a>
+			<a href="contacto.html">Contacto</a>
+			<a href="carrito.html">Carrito <span id="cart-count" aria-live="polite">0</span></a>
 
-                <a href="">Login
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                    </svg>
-                </a>
-            </nav>
+			
+			<form class="search" action="productos.html" method="get" role="search">
+				<label for="q" class="visually-hidden">Buscar</label>
+				<input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
+				<button id="boton-buscar" type="submit">Buscar</button>
+			</form>
+		</nav>
+	</header>
 
-        </header>
+    <main id="producto-individual">
+        <div id="producto-detalle"></div>
+        <div id="producto-caracteristicas-container">
+            <ul id="producto-caracteristicas"></ul>
+        </div>
+    </main>
 
-        <main id="producto-individual">
-            <div id="producto-detalle">
+    <footer class="site-footer">
+		<div class="footer-container">
+			<div class="footer-section">
+				<h3>Enlaces</h3>
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="productos.html">Productos</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
+				</ul>
+			</div>
 
-            </div>
+			<div class="footer-section">
+				<h3>Red social</h3>
+				<ul class="social-media">
+					<li><a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=0F722C37711BD6305A77E4FFDCE89EB4&f_hash=15268A94162158099670952E71AA8CBC" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+				</ul>
+			</div>
 
-            <div id="producto-caracteristicas-container">
-                <ul id="producto-caracteristicas"></ul>
-            </div>
-            
+			<div class="footer-section">
+				<h3>Contacto</h3>
+				<ul>
+					<li><strong>Dirección: </strong>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
+			Ciudad Autónoma de Buenos Aires, Argentina</li>
+					<li><strong>Teléfono: </strong>+54 11 4567-8900</li>
+					<li><strong>Email: </strong><a href="mailto:info@hermannosjota.com.ar">info@hermanosjota.com.ar</a></li>
+				</ul>
+			</div>
 
-        </main>
+		</div>
+	</footer>
         
-      <script src="assets/js/common.js"></script>   
-      <script src="assets/js/productos.js"></script>
-      <script src="assets/js/producto.js"></script>  
+    <script src="assets/js/common.js"></script>   
+    <script src="assets/js/productos.js"></script>
+    <script src="assets/js/producto.js"></script>  
 
 </body>
 

@@ -1,6 +1,8 @@
 .branding {
   display: flex; /* Convierte el contenedor en un flex container */
   align-items: center; /* Centra verticalmente el logo y el texto */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  text-align: center; /* Asegura que el texto esté centrado */
   gap: 10px; /* Añade un pequeño espacio entre el logo y el texto */
 }
 
@@ -11,26 +13,41 @@
   white-space: nowrap; border: 0; padding: 0; margin: -1px;
 }
 
-.logo-text {
-  /* Añade estilos para el texto si lo necesitas */
-  font-size: 2rem; 
-  color: #f5f2f0;
-  margin: 0; /* Elimina cualquier margen por defecto para evitar espacios extra */
-}
 
 header{
-    background-color:#A0522D;
+    background-color:#ffffff;
     color:#FFFFFF ;
+    height: 200px;
 }
+
 body{
     background-color:#F5E6D3;
     font-family: "inter", sans-serif;
-}
-.site-nav a {
-  text-decoration: none;
-  color: #faf8f8;
+    min-height: 100vh; /* asegura que el cuerpo ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
+.site-nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 2rem; 
+  justify-content: center; 
+  align-items: center;
+  flex-wrap: wrap; 
+  color: #C47A6D;
+}
+
+main {
+  flex: 1; /* empuja el footer hacia abajo si el contenido es corto */
+}
 main a {
   color: #080808; 
 }
@@ -38,11 +55,47 @@ a h1 {
   text-decoration: none;
 }
 
-footer{
-    background-color: #C47A6D;
+
+.site-footer {
+  background-color: #87A96B;
+  width: 100vw; /* fuerza el ancho completo de la ventana */
+  margin: 0;     /* elimina márgenes que puedan achicarlo */
+  padding: 2rem 0;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  
 }
-#Logo{
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #F5E6D3;
+  text-align: left;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* ← esto apila los ítems verticalmente */
+  gap: 0.5rem;
+}
+
+#logo{
     background-color: #FFFFFF;
+    height: 120px;
+    align-items: center;
+    
 }
 .Multimedia{
   text-align: center;
@@ -51,6 +104,34 @@ footer{
   margin: 50px;
   padding: 5px;
  }
+
+.search {
+  display: flex;
+  gap: 1rem; /* espacio entre el input y el botón */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+#boton-buscar {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #C47A6D;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#q {
+  flex: 1; /* ocupa todo el espacio disponible */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #e0d1d1;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
 
 /* 
    Estilos para página Productos------------------------------------------------------------------------------------------------------------------ */
@@ -75,48 +156,7 @@ body.productos .catalogo .container {
   }
 }
 
-/* ----- Filtros ----- */
-body.productos .filtros form {
-  position: sticky;
-  top: 80px;
-}
 
-body.productos .filtros details {
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  background: #fff;
-  margin-bottom: 12px;
-  padding: 10px;
-}
-
-body.productos .filtros summary {
-  font-weight: 600;
-  cursor: pointer;
-}
-
-body.productos .filtros ul {
-  list-style: none;
-  margin: 8px 0 0;
-  padding: 0;
-  display: grid;
-  gap: 6px;
-}
-
-body.productos .filtros button {
-  width: 100%;
-  margin-top: 8px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  background: #0f172a;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-body.productos .filtros button:hover {
-  background: #1e293b;
-}
 
 /* ----- Toolbar resultados ----- */
 body.productos .toolbar {
@@ -137,7 +177,7 @@ body.productos .orden select,
 body.productos .orden button {
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #F5E6D3;
 }
 
 body.productos .orden button {
@@ -162,7 +202,7 @@ body.productos .product-grid {
 body.productos .product-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #F5E6D3;
   border-radius: 12px;
   background: #fff;
   overflow: hidden;
@@ -182,7 +222,7 @@ body.productos .product-link {
 
 body.productos .thumb {
   aspect-ratio: 1/1;
-  background: #f1f5f9;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,22 +254,11 @@ body.productos .price {
   font-weight: 700;
 }
 
-body.productos .installments {
-  margin: 4px 0 0;
-  color: #475569;
-  font-size: 0.85rem;
-}
-
-body.productos .shipping {
-  margin: 4px 0 0;
-  font-size: 0.85rem;
-  color: #16a34a;
-}
-
-body.productos .ratings {
-  padding: 0 12px 12px;
-  color: #334155;
-  font-size: 0.9rem;
+#video {
+  width: 70%; /* Ajusta el ancho según tus necesidades */
+  height: auto; /* Mantiene la proporción del video */
+  border-radius: 8px; /* Opcional: añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: añade una sombra suave */
 }
 
 /* ----- Acciones en tarjeta ----- */
@@ -245,7 +274,7 @@ body.productos .btn {
   flex: 1;
   padding: 8px 12px;
   border-radius: 8px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #F5E6D3;
   text-align: center;
   text-decoration: none;
   font-weight: 600;
@@ -331,7 +360,7 @@ textarea {
   padding: 12px;
   font-size: 1rem;
   background-color: #b75e36;
-  color: white;
+  color: #F5E6D3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
