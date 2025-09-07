@@ -352,6 +352,9 @@ const productos = [
 ]
 
 
+
+
+
 // Lógica para subir los productos al HTML
 const listaProductos = document.querySelector('#lista-productos');
 
@@ -370,3 +373,49 @@ productos.forEach((producto, index) => {
 
     listaProductos.appendChild(li);
 })
+
+// CATÁLOGO: buscador + render dinámico con guard 
+document.addEventListener('DOMContentLoaded', () => {
+  const lista = document.getElementById('lista-productos');
+  if (!lista) return; 
+
+
+  const params = new URLSearchParams(window.location.search);
+  const q = (params.get('q') || '').toLowerCase().trim();
+
+  
+  const qInput = document.getElementById('q');
+  if (qInput) qInput.value = params.get('q') || '';
+
+
+  const obtenerProductos = () =>
+    new Promise(res => setTimeout(() => {
+    
+      const data = (window.productos || (typeof productos !== 'undefined' ? productos : []));
+      res(data);
+    }, 400));
+
+  const coincide = (p) => {
+    const nombre = (p.nombre || '').toLowerCase();
+    const desc   = (p.descripcion || '').toLowerCase();
+    return !q || nombre.includes(q) || desc.includes(q);
+  };
+
+  const itemHTML = (p, idx) => {
+    
+    const id = Number.isFinite(p.id) ? p.id : idx;
+    return `
+      <li class="producto-item">
+        <img src="${p.imagen}" alt="${p.nombre}">
+        <h3><a href="producto.html?id=${id}">${p.nombre}</a></h3>
+        <p class="precio-producto"><strong>ARS</strong> $${p.precio}</p>
+        ${p.descripcion ? `<p class="descripcion-producto">${p.descripcion}</p>` : ''}
+      </li>
+    `;
+  };
+
+  obtenerProductos().then(items => {
+    const visibles = items.filter(coincide);
+    lista.innerHTML = visibles.map((p, i) => itemHTML(p, i)).join('');
+  });
+});
