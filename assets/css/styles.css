@@ -3,7 +3,7 @@
   align-items: center; /* Centra verticalmente el logo y el texto */
   justify-content: center; /* Centra horizontalmente el contenido */
   text-align: center; /* Asegura que el texto esté centrado */
-  gap: 10px; /* Añade un pequeño espacio entre el logo y el texto */
+  gap: 10px; 
 }
 
 .visually-hidden {
@@ -46,7 +46,7 @@ body{
 }
 
 main {
-  flex: 1; /* empuja el footer hacia abajo si el contenido es corto */
+  flex: 1; 
 }
 main a {
   color: #080808; 
@@ -87,7 +87,7 @@ a h1 {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* ← esto apila los ítems verticalmente */
+  flex-direction: column; 
   gap: 0.5rem;
 }
 
@@ -190,14 +190,22 @@ body.productos .orden button {
 
 
 /* ----- lista de productos ----- */
-body.productos .product-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+.product-grid {
+  max-width: 1000px;
+  margin: 0 auto;
 }
+
+body.productos .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center; 
+  max-width: 1000px;      
+  margin: 0 auto;         
+  padding: 2rem 1rem;     
+  list-style: none;
+}
+
 
 body.productos .product-card {
   display: flex;
@@ -256,10 +264,9 @@ body.productos .price {
 }
 
 #video {
-  width: 70%; /* Ajusta el ancho según tus necesidades */
-  height: auto; /* Mantiene la proporción del video */
-  border-radius: 8px; /* Opcional: añade bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: añade una sombra suave */
+  width: 70%; 
+  height: auto; 
+  border-radius: 8px;
 }
 
 /* ----- Acciones en tarjeta ----- */
@@ -305,6 +312,41 @@ body.productos .btn.ghost:hover {
 }
 
 
+#bienvenida {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.destacados h2 {
+  margin-left: 30px;
+}
+.historia {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.historia h2 {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.historia p {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.que-ofrecemos {
+  margin-top: 150px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.que-ofrecemos p {
+  margin-left: 100px;
+  margin-right: 100px;
+}
 
 
 .main-container {
@@ -312,9 +354,7 @@ body.productos .btn.ghost:hover {
   margin: 0 auto;
   padding: 20px;
   display: flex; 
-  /* Permite que las columnas se envuelvan en pantallas pequeñas */
   flex-wrap: wrap; 
-  /* Añade un espacio entre las dos columnas */
   gap: 40px; 
 }
 
@@ -324,9 +364,7 @@ body.productos .btn.ghost:hover {
   align-items: flex-start;
   background-color: #fffdfd;
   padding: 40px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex: 1; 
-  /* Ancho mínimo para que no se vea mal en pantallas angostas */
   min-width: 400px;
 }
 
@@ -378,8 +416,8 @@ textarea {
 }
 
 .contacto-info .fa-instagram {
-  color: #E1306C; /* Un rosa similar al de Instagram */
-  margin-right: 8px; /* Pequeño espacio a la derecha del icono */
+  color: #E1306C; 
+  margin-right: 8px; 
   font-size: 1.5rem; 
 }
 
