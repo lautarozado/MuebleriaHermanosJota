@@ -539,3 +539,105 @@ main a:hover {
   font-size: .95rem;
   z-index: 9999;
 }
+
+
+/* ===== Header lindo, sticky y responsive ===== */
+.site-header{
+  position: sticky; top: 0; z-index: 100;
+  color: #fff;
+  /* degradado con tu paleta */
+  background: linear-gradient(135deg, #A0522D 0%, #C47A6D 100%);
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+
+/* contenedor interno para centrar y espaciar */
+.header-inner{
+  max-width: 1200px; margin: 0 auto;
+  padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+
+/* marca */
+.branding h1{
+  display: flex; align-items: center; gap: 12px;
+  margin: 0; color: #fff;
+  font-size: clamp(1.1rem, 1.6vw + .8rem, 1.6rem);
+}
+
+/* logo como “chapa” */
+#Logo{
+  background: #ffffff; border-radius: 12px; padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.10);
+}
+
+/* nav */
+.site-nav{
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+
+/* links del nav */
+.site-nav a{
+  color: #fff; text-decoration: none;
+  padding: 8px 12px; border-radius: 10px;
+  transition: background .2s, transform .1s;
+}
+
+.site-nav a:hover{
+  background: rgba(255,255,255,.16);
+  transform: translateY(-1px);
+}
+
+.site-nav a:focus-visible{
+  outline: 2px solid #fff; outline-offset: 2px;
+}
+
+/* link activo (por aria-current o clase .active) */
+.site-nav a[aria-current="page"], .site-nav a.active{
+  background: rgba(255,255,255,.22);
+}
+
+/* contador del carrito como “pill” */
+#cart-count{
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.5rem;
+  margin-left: 6px; padding: 2px 6px;
+  background: #fff; color: #A0522D; font-weight: 700;
+  border-radius: 999px;
+}
+
+/* íconos alineados */
+.site-nav svg{ vertical-align: -2px; margin-left: 6px; opacity: .9; }
+
+/* buscador del header */
+.site-nav .search{
+  display: flex; align-items: center; gap: 8px;
+  margin-left: 8px;
+}
+
+.site-nav .search input{
+  padding: 8px 10px; border: none; border-radius: 8px;
+  min-width: 180px;
+  background: rgba(255,255,255,.95); color: #222;
+}
+
+.site-nav .search button{
+  padding: 8px 12px; border: 0; border-radius: 8px;
+  background: #0f172a; color: #fff; font-weight: 600; cursor: pointer;
+}
+
+.site-nav .search button:hover{ background: #1e293b; }
+
+
+@media (max-width: 900px){
+  .header-inner{ gap: 14px; }
+  .site-nav{ width: 100%; justify-content: space-between; }
+  .site-nav a{ padding: 8px 10px; }
+  .site-nav .search{ flex: 1; order: 2; }
+  .branding h1{ font-size: 1.2rem; }
+  #Logo{ height: 48px; }
+}
+
+
+main, .catalogo, .contenido{ position: relative; z-index: 1; }
+
