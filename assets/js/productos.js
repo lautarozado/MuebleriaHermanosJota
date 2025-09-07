@@ -1,7 +1,52 @@
 
 
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+function guardarCarrito() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// con esto actualizamos el carrito y sumamos todos los productos que tengamos
+function actualizarContadorCarrito() {
+  const contadorElemento = document.getElementById('cart-count');
+  const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+  if (contadorElemento) {
+    contadorElemento.textContent = totalItems;
+  }
+}
+
+// con esto agregamos un producto al carrito, busca el producto en el array por id
+function agregarAlCarrito(idProducto) {
+  const productoAAgregar = productos.find(p => p.id === idProducto);
+  
+  if (!productoAAgregar) {
+    console.error("Producto no encontrado.");
+    return;
+  }
+  
+ 
+  const productoEnCarrito = carrito.find(item => item.id === idProducto);
+  
+  if (productoEnCarrito) {
+    // Si el producto que queremos agregar ya se encuentra en el carrito, aumentamos la cantidad
+    productoEnCarrito.cantidad++;
+  } else {
+    carrito.push({ ...productoAAgregar, cantidad: 1 });
+  }
+  
+  //agregamos un alert para que el usuario sepa que se agrego el producto al carrito:)
+  guardarCarrito();
+  actualizarContadorCarrito();
+  alert(`Se agregó ${productoAAgregar.nombre} al carrito!`);
+}
+
+// con esto nos aseguramos que el contador aparezca actualizado
+document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+
+
+
 const productos = [
-    {
+    {   "id": 1,
         "nombre": "Aparador Uspallata",
         "precio": 12345,
         "descripcion": "Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Su silueta minimalista realza el veteado natural de la madera, creando una pieza que combina funcionalidad y elegancia atemporal para espacios contemporáneos.",
@@ -30,7 +75,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Aparador Uspallata.png"
     },
-    {
+    {   "id": 2,
         "nombre": "Biblioteca Recoleta",
         "precio": 12345,
         "descripcion": "Sistema modular de estantes abierto que combina estructura de acero Sage Green y repisas en roble claro. Perfecta para colecciones y objetos de diseño, su diseño versátil se adapta a cualquier espacio contemporáneo con elegancia funcional.",
@@ -59,7 +104,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Biblioteca Recoleta.png"
     },
-    {
+    {   "id": 3,
         "nombre": "Butaca Mendoza",
         "precio": 12345,
         "descripcion": "Butaca tapizada en bouclé Dusty Rose con base de madera de guatambú. El respaldo curvo abraza el cuerpo y ofrece máximo confort, mientras que su diseño orgánico aporta calidez y sofisticación a cualquier ambiente contemporáneo.",
@@ -88,7 +133,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Butaca Mendoza.png"        
     },    
-    {
+    {   "id": 4,
         "nombre": "Sillón Copacabana",
         "precio": 12345,
         "descripcion": "Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna. Inspirado en la estética brasilera moderna de los 60, combina comodidad excepcional con un diseño icónico que trasciende tendencias y épocas.",
@@ -117,7 +162,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Sillón Copacabana.png"
     },
-    {
+    {   "id": 5,
         "nombre": "Mesa de Centro Araucaria",
         "precio": 12345,
         "descripcion": "Mesa de centro con sobre circular de mármol Patagonia y base de tres patas en madera de nogal. Su diseño minimalista se convierte en el punto focal perfecto para cualquier sala de estar contemporánea, combinando la frialdad del mármol con la calidez de la madera.",
@@ -146,7 +191,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Mesa de Centro Araucaria.png"
     },
-    {
+    {   "id": 6,
         "nombre": "Mesa de Noche Aconcagua",
         "precio": 12345,
         "descripcion": "Mesa de noche con cajón oculto y repisa inferior en roble certificado FSC®. Su diseño limpio y funcional permite convivir con diferentes estilos de dormitorio, ofreciendo almacenamiento discreto y elegante para objetos personales.",
@@ -175,7 +220,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Mesa de Noche Aconcagua.png"
     },
-    {
+    {   "id": 7,
         "nombre": "Sofá Patagonia",
         "precio": 12345,
         "descripcion": "Sofá de tres cuerpos tapizado en lino Warm Alabaster con patas cónicas de madera. Los cojines combinan espuma de alta resiliencia con plumón reciclado, ofreciendo comodidad duradera y sostenible para el hogar moderno.",
@@ -204,7 +249,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Sofá Patagonia.png"
     },
-    {
+    {   "id": 8,
         "nombre": "Mesa Comedor Pampa",
         "precio": 12345,
         "descripcion": "Mesa extensible de roble macizo con tablero biselado y sistema de apertura suave. Su diseño robusto y elegante se adapta perfectamente a reuniones íntimas o grandes celebraciones familiares, extendiéndose de 6 a 10 comensales.",
@@ -233,7 +278,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Mesa Comedor Pampa.png"
     },
-    {
+    {   "id": 9,
         "nombre": "Sillas Córdoba",
         "precio": 12345,
         "descripcion": "Set de cuatro sillas apilables en contrachapado moldeado de nogal y estructura tubular pintada en Sage Green. Su diseño ergonómico y materiales de calidad garantizan comodidad y durabilidad en el uso diario, perfectas para comedores contemporáneos.",
@@ -262,7 +307,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Sillas Córdoba.png"
     },
-    {
+    {   "id": 10,
         "nombre": "Escritorio Costa",
         "precio": 12345,
         "descripcion": "Escritorio compacto con cajón organizado y tapa pasacables integrada en bambú laminado. Ideal para espacios de trabajo en casa, combina funcionalidad moderna con estética minimalista y sostenible, perfecto para el trabajo remoto.",
@@ -291,7 +336,7 @@ const productos = [
         "cables": "Pasacables integrado",
         "imagen": "assets/img/Escritorio Costa.png"
     },
-    {
+    {   "id": 11,
         "nombre": "Silla de Trabajo Belgrano",
         "precio": 12345,
         "descripcion": "Silla ergonómica regulable en altura con respaldo de malla transpirable y asiento tapizado en tejido reciclado. Diseñada para largas jornadas de trabajo con máximo confort y apoyo lumbar, ideal para oficinas en casa y espacios de coworking.",
@@ -320,7 +365,7 @@ const productos = [
         "cables": null,
         "imagen": "assets/img/Silla de Trabajo Belgrano.png"
     },
-    {
+    {   "id": 12,
         "nombre": "Cama Neuquén",
         "precio": 12345,
         "descripcion": "Cama plataforma con cabecero flotante tapizado en lino natural y estructura de madera maciza. Su diseño minimalista y sofisticado crea un ambiente de serenidad y elegancia, perfecto para dormitorios contemporáneos que buscan paz y simplicidad.",
@@ -402,17 +447,17 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const itemHTML = (p, idx) => {
-    
-    const id = Number.isFinite(p.id) ? p.id : idx;
-    return `
-      <li class="producto-item">
-        <img src="${p.imagen}" alt="${p.nombre}">
-        <h3><a href="producto.html?id=${id}">${p.nombre}</a></h3>
-        <p class="precio-producto"><strong>ARS</strong> $${p.precio}</p>
-        ${p.descripcion ? `<p class="descripcion-producto">${p.descripcion}</p>` : ''}
-      </li>
-    `;
-  };
+  const id = Number.isFinite(p.id) ? p.id : idx;
+  return `
+    <li class="producto-item">
+      <img src="${p.imagen}" alt="${p.nombre}">
+      <h3><a href="producto.html?id=${id}">${p.nombre}</a></h3>
+      <p class="precio-producto"><strong>ARS</strong> $${p.precio}</p>
+      ${p.descripcion ? `<p class="descripcion-producto">${p.descripcion}</p>` : ''}
+      <button class="btn primary" onclick="agregarAlCarrito(${id})">Agregar al Carrito</button>
+    </li>
+  `;
+};
 
   obtenerProductos().then(items => {
     const visibles = items.filter(coincide);

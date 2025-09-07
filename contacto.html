@@ -28,7 +28,10 @@
 			<a href="index.html">Inicio</a>
 			<a href="productos.html">Productos</a>
 			<a href="contacto.html">Contacto</a>
-			<a href="carrito.html">Carrito <span id="cart-count" aria-live="polite">0</span></a>
+		
+      <a href="carrito.html">
+    <i class="fas fa-shopping-cart"></i>Carrito <span id="cart-count" aria-live="polite">0</span>
+</a>
 
 			
 			<form class="search" action="productos.html" method="get" role="search">
@@ -109,10 +112,52 @@
   </main>
 
   <footer class="site-footer">
-    <p><small>Hermanos Jota © Grupo 14 — Escuela Innovación</small></p>
-  </footer>
+		<div class="footer-container">
+			<div class="footer-section">
+				<h3>Enlaces</h3>
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="productos.html">Productos</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-section">
+				<h3>Red social</h3>
+				<ul class="social-media">
+					<li><a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=0F722C37711BD6305A77E4FFDCE89EB4&f_hash=15268A94162158099670952E71AA8CBC" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-section">
+				<h3>Contacto</h3>
+				<ul>
+					<li><strong>Dirección: </strong>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
+			Ciudad Autónoma de Buenos Aires, Argentina</li>
+					<li><strong>Teléfono: </strong>+54 11 4567-8900</li>
+					<li><strong>Email: </strong><a href="mailto:info@hermannosjota.com.ar">info@hermanosjota.com.ar</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</footer>
+
 
   <script src="assets/js/common.js"></script>
   <script src="assets/js/contacto.js"></script>
+  <script>
+    // Carga el carrito desde localStorage o crea un array vacío
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Actualiza el número en el icono del carrito en el menú de navegación
+    function actualizarContadorCarrito() {
+      const contadorElemento = document.getElementById('cart-count');
+      const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+      if (contadorElemento) {
+        contadorElemento.textContent = totalItems;
+      }
+    }
+    document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+</script>
 </body>
 </html>
