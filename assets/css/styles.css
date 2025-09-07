@@ -4,6 +4,13 @@
   gap: 10px; /* Añade un pequeño espacio entre el logo y el texto */
 }
 
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
 .logo-text {
   /* Añade estilos para el texto si lo necesitas */
   font-size: 2rem; 
@@ -139,6 +146,8 @@ body.productos .orden button {
   font-weight: 600;
   cursor: pointer;
 }
+
+
 
 /* ----- lista de productos ----- */
 body.productos .product-grid {
@@ -512,4 +521,21 @@ main a:hover {
   margin-bottom: 30px;
   margin-right: 20px;
   margin-left: 20px;
+}
+/* feedback del botón */
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
+
+/* toast simple */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  font-size: .95rem;
+  z-index: 9999;
 }
