@@ -2,16 +2,14 @@
 <html lang="es">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hermanos Jota - Productos</title>
-	<link rel="stylesheet" href="assets/css/styles.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hermanos Jota - Carrito</title>
+	<link rel="stylesheet" href="assets/css/styles.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="productos">
+<body class="carrito">
 	<header class="site-header">
 		<div class="branding">
 			<a href="index.html" class="brand">
@@ -36,11 +34,20 @@
 		</nav>
 	</header>
 
+	<main class="contenido">
+		<h1>Carrito de compras</h1>
 
-	<main class="catalogo" id="contenido">
-		<ul id="lista-productos" class="product-grid" aria-live="polite"></ul>
+		<section class="resumen-carrito">
+			<ul id="carrito-lista" class="carrito-grid" aria-live="polite"></ul>
+
+			<div class="total">
+				<p>Total: <strong><span id="carrito-total">ARS $0</span></strong></p>
+				<button id="vaciar-carrito" class="btn danger">Vaciar carrito</button>
+			</div>
+		</section>
+
+
 	</main>
-
 
 	<footer class="site-footer">
 		<div class="footer-container">
@@ -75,10 +82,10 @@
 		</div>
 	</footer>
 
-	<script src="assets/js/common.js"></script>
+	<!-- Orden de scripts: datos → carrito base → render de carrito -->
 	<script src="assets/js/productos.js"></script>
-	<script src="assets/js/producto.js"></script>
-
+	<script src="assets/js/common.js"></script>
+	<script src="assets/js/carrito.js"></script>
 </body>
 
 </html>

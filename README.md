@@ -1,5 +1,10 @@
 <h1>Repositorio del grupo 14</h1>
 
+# Mueblería Hermanos Jota — Sprint 1 y 2 
+
+Sitio web estático con HTML, CSS y JavaScript que simula un e-commerce de muebles.  
+Incluye páginas de inicio, catálogo de productos, detalle de producto y formulario de contacto con validaciones.
+
 <div><b>Programadores: </b>
     <ul>
     <li> <span>Lautaro Zado <a href="https://github.com/lautarozado"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a></li> 
@@ -33,3 +38,30 @@ se mantiene, pero les cuesta mucho atraer a un público más joven y expandir su
 más allá de su localidad. Su presencia online se limita a una página de Instagram que manejan
 esporádicamente. Para sobrevivir y crecer, han decidido dar el salto digital y los han
 contratado a ustedes para construir su primera plataforma de e-commerce.</p>
+
+## 🛠️ Tecnologías
+- HTML5 semántico
+- CSS3 (Flexbox, Grid, responsive)
+- JavaScript (ES6, manipulación del DOM, localStorage)
+- GitHub Pages para el deploy
+
+- ## 🚀 Funcionalidades
+- Página de inicio con productos destacados.
+- Catálogo (`productos.html`) generado dinámicamente desde un array de objetos.
+- Detalle de producto (`producto.html`) identificado por parámetro `?id=`.
+- Carrito con contador persistente en `localStorage`.
+- Formulario de contacto con validación en cliente.
+- Diseño responsive con Flexbox y Grid.
+
+## ▶️ Cómo ejecutar
+1. Clonar este repositorio.
+2. Abrir `index.html` en el navegador.  
+   o visitar el deploy https://muebleria1212.netlify.app/
+   
+## 📸 Capturas
+
+
+<img width="1332" height="652" alt="Screenshot 2025-09-07 221232" src="https://github.com/user-attachments/assets/52b4d8f6-ade8-458e-91d9-75cc66d740be" />
+<img width="1325" height="639" alt="Screenshot 2025-09-07 221244" src="https://github.com/user-attachments/assets/f832d9f5-e894-4a1b-8dd5-3a75fe4e2017" />
+<img width="1331" height="644" alt="Screenshot 2025-09-07 221253" src="https://github.com/user-attachments/assets/2ca77cee-0fa4-493f-a938-215e8e1f1f43" />
+

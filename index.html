@@ -5,212 +5,93 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hermanos Jota</title>
         <link rel="stylesheet" href="assets/css/styles.css">
-        
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body class="productos">
         <header class="site-header">
-            <div class="branding">
-              <a href="index.html" class="brand">
-              <h1 class="encabezado">
-              <img src="assets/img/logo.svg" alt="Icono Hermanos Jota" height="60px" id="Logo">
-                Mueblería Hermanos Jota
-              </h1>
-            </a>
-            </div>
+    	<div class="branding">
+      		<a href="index.html" class="brand">
+          		<img id="logo" src="assets/img/logo.svg" alt="Icono Hermanos Jota">
+      		</a>
+    	</div>
 
-             <nav class="site-nav" aria-label="Principal">
-                <a href="index.html">Inicio</a>
-                <a href="productos.html">Productos</a>
-                <a href="contacto.html">Contacto</a>
-                <a href="">Carrito
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </a>
-                <a href="">Login
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                    </svg>
-                </a>
+    	<nav class="site-nav" aria-label="Principal">
+			<a href="index.html">Inicio</a>
+			<a href="productos.html">Productos</a>
+			<a href="contacto.html">Contacto</a>
+			<a href="carrito.html">
+                <i class="fas fa-shopping-cart"></i>Carrito<span id="cart-count" aria-live="polite">0</span></a>
 
-                <form class="search" action="productos.html" method="get" role="search">
-                  <label for="q" class="visually-hidden">Buscar</label>
-                  <input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
-                  <button type="submit">Buscar</button>
-                </form>
-            </nav>
-        </header>
+			
+			<form class="search" action="productos.html" method="get" role="search">
+				<label for="q" class="visually-hidden">Buscar</label>
+				<input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
+				<button id="boton-buscar" type="submit">Buscar</button>
+			</form>
+		</nav>
+	</header>
         <main>
-         <article>
-            <section>
-                <h2>Bienvenidos...</h2>
+            <article>
+                <section>
+                    <h2 id="bienvenida">Bienvenidos a Mueblería Hermanos Jota</h2>
+                </section>
+                <section class="destacados">
+                    <h2>Productos destacados</h2>
+                    <ul id="destacados" class="product-grid" aria-live="polite"></ul>
+                </section>
+
+                <div class="historia">
+                    <h2>Nuestra historia</h2>
+                    <p>Hermanos Jota nace como el redescubrimiento de un arte olvidado: el de crear muebles que no solo cumplen una función, sino que despiertan emociones. Nuestra historia se teje entre la herencia de la artesanía tradicional y la innovación consciente del presente. Inspirados por el optimismo de los años 60 y guiados por los valores de sustentabilidad del 2025, cada pieza que diseñamos honra el pasado mientras abraza el futuro. No somos solo fabricantes de mobiliario: somos narradores de historias, guardianes de legado y creadores de belleza cotidiana.</p>
+                </div>         
+                <div class="que-ofrecemos">
+                    <h2>¿Qué ofrecemos?</h2>
+                    <p>Ofrecemos mucho más que muebles: ofrecemos experiencias que perduran. Cada producto de Hermanos Jota está pensado para acompañarte en tu día a día con calidez, funcionalidad y carácter. Usamos materiales nobles, técnicas responsables y principios de diseño atemporal para crear piezas que envejecen con gracia y se integran naturalmente a tu vida. Desde camas que invitan al descanso profundo hasta aparadores que cuentan su propia historia, cada objeto es una inversión en calidad, estética y conciencia.</p>
+                </div> 
                 <div>
-                    <h2>Productos Destacados</h2>
-                          <ul class="product-grid" aria-live="polite">
-        <li>
-          <article class="product-card" itemscope itemtype="https://schema.org/Product">
-            <a class="product-link" href="producto.html">
-              <figure class="thumb">
-                <img src="assets/img/Sofá Patagonia.png"
-                     alt="Sillón Roma 3 cuerpos color gris"
-                     width="480" height="480" loading="lazy" itemprop="image">
-              </figure>
-              <h2 class="title" itemprop="name">Sillón Roma 3 Cuerpos</h2>
-              <p class="subtitle">Tela Antimanchas • Gris</p>
-            </a>
-            <div class="price-block" itemprop="offers" itemscope itemtype="">
-              <meta itemprop="priceCurrency" content="ARS">
-              <span class="price"><span class="currency">ARS</span> <span class="amount" itemprop="price">459999</span></span>
-              <link itemprop="availability" href="">En stock
-              <p class="installments">12x $45.999 sin interés</p>
-              <p class="shipping badge">Envío gratis</p>
-            </div>
-            <div class="ratings" aria-label="Valoraciones">★★★★☆ <span class="count">(128)</span></div>
-            <footer class="product-actions">
-              <a class="btn primary" href="">Ver detalle</a>
-              <a class="btn ghost" href="">Comparar</a>
-            </footer>
-          </article>
-        </li>
-
-        <li>
-          <article class="product-card" itemscope itemtype="https://schema.org/Product">
-            <a class="product-link" href="producto.html">
-              <figure class="thumb">
-                <img src="assets/img/Sillón Copacabana.png"
-                     alt="Sillón Verona esquinero chenille beige"
-                     width="480" height="480" loading="lazy" itemprop="image">
-              </figure>
-              <h2 class="title" itemprop="name">Sillón Verona Esquinero</h2>
-              <p class="subtitle">Chenille • Beige</p>
-            </a>
-            <div class="price-block" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-              <meta itemprop="priceCurrency" content="ARS">
-              <span class="price"><span class="currency">ARS</span> <span class="amount" itemprop="price">699999</span></span>
-              <link itemprop="availability" href="">Stock limitado
-              <p class="installments">6x $139.999</p>
-              <p class="shipping">Retiro en tienda</p>
-            </div>
-            <div class="ratings" aria-label="Valoraciones">★★★★★ <span class="count">(54)</span></div>
-            <footer class="product-actions">
-              <a class="btn primary" href="producto-sillon-verona.html">Ver detalle</a>
-              <a class="btn ghost" href="comparar.html?add=sillon-verona">Comparar</a>
-            </footer>
-          </article>
-        </li>
-
-                <li>
-          <article class="product-card" itemscope itemtype="https://schema.org/Product">
-            <a class="product-link" href="producto.html">
-              <figure class="thumb">
-                <img src="assets/img/Sillón Copacabana.png"
-                     alt="Sillón Verona esquinero chenille beige"
-                     width="480" height="480" loading="lazy" itemprop="image">
-              </figure>
-              <h2 class="title" itemprop="name">Sillón Verona Esquinero</h2>
-              <p class="subtitle">Chenille • Beige</p>
-            </a>
-            <div class="price-block" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-              <meta itemprop="priceCurrency" content="ARS">
-              <span class="price"><span class="currency">ARS</span> <span class="amount" itemprop="price">699999</span></span>
-              <link itemprop="availability" href="">Stock limitado
-              <p class="installments">6x $139.999</p>
-              <p class="shipping">Retiro en tienda</p>
-            </div>
-            <div class="ratings" aria-label="Valoraciones">★★★★★ <span class="count">(54)</span></div>
-            <footer class="product-actions">
-              <a class="btn primary" href="producto-sillon-verona.html">Ver detalle</a>
-              <a class="btn ghost" href="comparar.html?add=sillon-verona">Comparar</a>
-            </footer>
-          </article>
-        </li>
-
-        <li>
-          <article class="product-card" itemscope itemtype="https://schema.org/Product">
-            <a class="product-link" href="producto.html">
-              <figure class="thumb">
-                <img src="assets/img/Sillón Copacabana.png"
-                     alt="Sillón Verona esquinero chenille beige"
-                     width="480" height="480" loading="lazy" itemprop="image">
-              </figure>
-              <h2 class="title" itemprop="name">Sillón Verona Esquinero</h2>
-              <p class="subtitle">Chenille • Beige</p>
-            </a>
-            <div class="price-block" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-              <meta itemprop="priceCurrency" content="ARS">
-              <span class="price"><span class="currency">ARS</span> <span class="amount" itemprop="price">699999</span></span>
-              <link itemprop="availability" href="">Stock limitado
-              <p class="installments">6x $139.999</p>
-              <p class="shipping">Retiro en tienda</p>
-            </div>
-            <div class="ratings" aria-label="Valoraciones">★★★★★ <span class="count">(54)</span></div>
-            <footer class="product-actions">
-              <a class="btn primary" href="producto-sillon-verona.html">Ver detalle</a>
-              <a class="btn ghost" href="comparar.html?add=sillon-verona">Comparar</a>
-            </footer>
-          </article>
-        </li>
-
-        <li>
-          <article class="product-card" itemscope itemtype="https://schema.org/Product">
-            <a class="product-link" href="producto.html">
-              <figure class="thumb">
-                <img src="assets/img/Sofá Patagonia.png"
-                     alt="Sillón Roma 3 cuerpos color gris"
-                     width="480" height="480" loading="lazy" itemprop="image">
-              </figure>
-              <h2 class="title" itemprop="name">Sillón Roma 3 Cuerpos</h2>
-              <p class="subtitle">Tela Antimanchas • Gris</p>
-            </a>
-            <div class="price-block" itemprop="offers" itemscope itemtype="">
-              <meta itemprop="priceCurrency" content="ARS">
-              <span class="price"><span class="currency">ARS</span> <span class="amount" itemprop="price">459999</span></span>
-              <link itemprop="availability" href="">En stock
-              <p class="installments">12x $45.999 sin interés</p>
-              <p class="shipping badge">Envío gratis</p>
-            </div>
-            <div class="ratings" aria-label="Valoraciones">★★★★☆ <span class="count">(128)</span></div>
-            <footer class="product-actions">
-              <a class="btn primary" href="">Ver detalle</a>
-              <a class="btn ghost" href="">Comparar</a>
-            </footer>
-          </article>
-        </li>
-
-        <!-- Repite más <li> con tus productos -->
-      </ul>
-                </div>
-
-
-                <div>
-                    <h3>Quienes somos?</h3>
                     <p class="Multimedia">
-                        <video width="70%" controls autoplay>
+                        <video id="video" controls autoplay>
                             <source src="assets/docs/Video institucional Hermanos Jota.mp4" type="video/mp4">
                             <source src="movie.ogg" type="video/ogg">
                             <img src="assets/img/logo.svg" alt="Video no soportado">
                             Tu navegador no soporta el video mostrado
                         </video>
                     </p>
-                    <img src="" alt="" height="">
-                </div>
-                <div>
-                    <h3>Nuestra historia</h3>
-                    <p></p>
-                    <p></p>
-                    <img src="" alt="" height="">
-                </div>         
-                <div>
-                    <h3>Que ofrecemos?...</h3>
-                    <p></p>
-                    <p></p>
-                    <img src="" alt="" height="">
                 </div>                           
-            </section>
-         </article>   
+            </article>   
         </main>
         <footer class="site-footer">
-            <p><small>Hermanos Jota © Grupo 14 — Escuela Innovación</small></p>
-        </footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Red social</h3>
+                    <ul class="social-media">
+                        <li><a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=0F722C37711BD6305A77E4FFDCE89EB4&f_hash=15268A94162158099670952E71AA8CBC" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><strong>Dirección: </strong>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
+                Ciudad Autónoma de Buenos Aires, Argentina</li>
+                        <li><strong>Teléfono: </strong>+54 11 4567-8900</li>
+                        <li><strong>Email: </strong><a href="mailto:info@hermannosjota.com.ar">info@hermanosjota.com.ar</a></li>
+                    </ul>
+                </div>
+            </div>
+	    </footer>
+       
+        <script src="assets/js/productos.js"></script>
+        <script src="assets/js/home.js"></script>
+
     </body>
 </html>
