@@ -1,50 +1,13 @@
 
 
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-function guardarCarrito() {
-  localStorage.setItem('carrito', JSON.stringify(carrito));
+function ignorarVacios(obj) {
+    for (let key in obj) {
+    if (obj[key] === null) {
+        delete obj[key];
+    }
+    return obj;
+    }
 }
-
-// con esto actualizamos el carrito y sumamos todos los productos que tengamos
-function actualizarContadorCarrito() {
-  const contadorElemento = document.getElementById('cart-count');
-  const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
-  if (contadorElemento) {
-    contadorElemento.textContent = totalItems;
-  }
-}
-
-// con esto agregamos un producto al carrito, busca el producto en el array por id
-function agregarAlCarrito(idProducto) {
-  const productoAAgregar = productos.find(p => p.id === idProducto);
-  
-  if (!productoAAgregar) {
-    console.error("Producto no encontrado.");
-    return;
-  }
-  
- 
-  const productoEnCarrito = carrito.find(item => item.id === idProducto);
-  
-  if (productoEnCarrito) {
-    // Si el producto que queremos agregar ya se encuentra en el carrito, aumentamos la cantidad
-    productoEnCarrito.cantidad++;
-  } else {
-    carrito.push({ ...productoAAgregar, cantidad: 1 });
-  }
-  
-  //agregamos un alert para que el usuario sepa que se agrego el producto al carrito:)
-  guardarCarrito();
-  actualizarContadorCarrito();
-  alert(`Se agregó ${productoAAgregar.nombre} al carrito!`);
-}
-
-// con esto nos aseguramos que el contador aparezca actualizado
-document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
-
-
-
 const productos = [
     {   "id": 1,
         "nombre": "Aparador Uspallata",
@@ -400,45 +363,17 @@ const productos = [
 
 
 
-// Lógica para subir los productos al HTML
-const listaProductos = document.querySelector('#lista-productos');
+const obtenerProductos = () =>
+  new Promise(res => setTimeout(() => res(window.productos || productos), 200));
 
-productos.forEach((producto, index) => {
-    const li = document.createElement('li');
-    li.classList.add('producto-item'); // le agrego una clase por si queremos modificar cosas específicas después
-
-    li.innerHTML = `
-    <img src="${producto.imagen}" alt="${producto.nombre}" width="200">
-    <h3><a href="producto.html?id=${encodeURIComponent(index)}">${producto.nombre}</a></h3>
-    <p class="precio-producto"><strong>ARS</strong> $${producto.precio}</p>
-    <p class="descripcion-producto">${producto.descripcion}</p>
-`;
-
-
-
-    listaProductos.appendChild(li);
-})
-
-// CATÁLOGO: buscador + render dinámico con guard 
 document.addEventListener('DOMContentLoaded', () => {
   const lista = document.getElementById('lista-productos');
-  if (!lista) return; 
-
+  if (!lista) return;
 
   const params = new URLSearchParams(window.location.search);
   const q = (params.get('q') || '').toLowerCase().trim();
-
-  
   const qInput = document.getElementById('q');
   if (qInput) qInput.value = params.get('q') || '';
-
-
-  const obtenerProductos = () =>
-    new Promise(res => setTimeout(() => {
-    
-      const data = (window.productos || (typeof productos !== 'undefined' ? productos : []));
-      res(data);
-    }, 400));
 
   const coincide = (p) => {
     const nombre = (p.nombre || '').toLowerCase();
@@ -446,21 +381,38 @@ document.addEventListener('DOMContentLoaded', () => {
     return !q || nombre.includes(q) || desc.includes(q);
   };
 
-  const itemHTML = (p, idx) => {
-  const id = Number.isFinite(p.id) ? p.id : idx;
-  return `
-    <li class="producto-item">
-      <img src="${p.imagen}" alt="${p.nombre}">
-      <h3><a href="producto.html?id=${id}">${p.nombre}</a></h3>
-      <p class="precio-producto"><strong>ARS</strong> $${p.precio}</p>
-      ${p.descripcion ? `<p class="descripcion-producto">${p.descripcion}</p>` : ''}
-      <button class="btn primary" onclick="agregarAlCarrito(${id})">Agregar al Carrito</button>
-    </li>
-  `;
-};
+  const itemHTML = (p) => {
+    const id = Number.isFinite(p.id) ? p.id : 0;
+    return `
+      <li class="producto-item">
+        <img src="${p.imagen}" alt="${p.nombre}">
+        <h3><a href="producto.html?id=${encodeURIComponent(id)}">${p.nombre}</a></h3>
+        <p class="precio-producto"><strong>ARS</strong> $${p.precio}</p>
+        ${p.descripcion ? `<p class="descripcion-producto">${p.descripcion}</p>` : ''}
+        <button class="btn primary add-to-cart" type="button" data-id="${id}">
+          Agregar al Carrito
+        </button>
+      </li>
+    `;
+  };
 
   obtenerProductos().then(items => {
     const visibles = items.filter(coincide);
-    lista.innerHTML = visibles.map((p, i) => itemHTML(p, i)).join('');
+    lista.innerHTML = visibles.map(itemHTML).join('');
   });
+});
+
+
+document.addEventListener('click', (ev) => {
+  const btn = ev.target.closest('.add-to-cart');
+  if (!btn) return;
+  const id = Number(btn.dataset.id);
+  if (!Number.isFinite(id)) return;
+
+  if (window.addToCart) {
+    window.addToCart(id, 1);                 
+    alert('Producto agregado al carrito');
+  } else {
+    console.error('addToCart no está definido. ¿Incluiste assets/js/common.js antes?');
+  }
 });
