@@ -49,6 +49,7 @@
   caracteristicas.innerHTML = "";
   try {
     Object.entries(producto).forEach(([key, value]) => {
+      // Retornamos solo la información importante.
       if (key !== "id" && key !== "nombre" && key !== "imagen" && key !== "descripcion" && key !== "precio" && value !== null && value !== undefined) {
         const li = document.createElement("li");
         li.innerHTML = `<strong>${escapeHTML(key)}:</strong> ${escapeHTML(String(value))}`;
