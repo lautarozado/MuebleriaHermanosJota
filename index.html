@@ -5,61 +5,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hermanos Jota</title>
         <link rel="stylesheet" href="assets/css/styles.css">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body class="productos">
         <header class="site-header">
-    	<div class="branding">
-      		<a href="index.html" class="brand">
-          		<img id="logo" src="assets/img/logo.svg" alt="Icono Hermanos Jota">
-      		</a>
-    	</div>
+    	    <div class="branding">
+      		    <a href="index.html" class="brand">
+          	    	<img id="logo" src="assets/img/logo.svg" alt="Icono Hermanos Jota">
+      		    </a>
+    	    </div>
 
-    	<nav class="site-nav" aria-label="Principal">
-			<a href="index.html">Inicio</a>
-			<a href="productos.html">Productos</a>
-			<a href="contacto.html">Contacto</a>
-			<a href="carrito.html">
-                <i class="fas fa-shopping-cart"></i>Carrito<span id="cart-count" aria-live="polite">0</span></a>
+    	    <nav class="site-nav" aria-label="Principal">
+		    	<a href="index.html">Inicio</a>
+		    	<a href="productos.html">Productos</a>
+		    	<a href="contacto.html">Contacto</a>
+		    	<a href="carrito.html">
+                    <i class="fas fa-shopping-cart"></i>Carrito<span id="cart-count" aria-live="polite">0</span>
+                </a>
+            </nav> 
 
-			
 			<form class="search" action="productos.html" method="get" role="search">
-				<label for="q" class="visually-hidden">Buscar</label>
-				<input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
-				<button id="boton-buscar" type="submit">Buscar</button>
+			    <label for="q" class="visually-hidden">Buscar</label>
+			    <input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
+			    <button id="boton-buscar" type="submit">Buscar</button>
 			</form>
-		</nav>
-	</header>
-        <main>
-            <article>
-                <section>
-                    <h2 id="bienvenida">Bienvenidos a Mueblería Hermanos Jota</h2>
-                </section>
-                <section class="destacados">
-                    <h2>Productos destacados</h2>
-                    <ul id="destacados" class="product-grid" aria-live="polite"></ul>
-                </section>
+	    </header>
 
-                <div class="historia">
-                    <h2>Nuestra historia</h2>
-                    <p>Hermanos Jota nace como el redescubrimiento de un arte olvidado: el de crear muebles que no solo cumplen una función, sino que despiertan emociones. Nuestra historia se teje entre la herencia de la artesanía tradicional y la innovación consciente del presente. Inspirados por el optimismo de los años 60 y guiados por los valores de sustentabilidad del 2025, cada pieza que diseñamos honra el pasado mientras abraza el futuro. No somos solo fabricantes de mobiliario: somos narradores de historias, guardianes de legado y creadores de belleza cotidiana.</p>
-                </div>         
-                <div class="que-ofrecemos">
-                    <h2>¿Qué ofrecemos?</h2>
-                    <p>Ofrecemos mucho más que muebles: ofrecemos experiencias que perduran. Cada producto de Hermanos Jota está pensado para acompañarte en tu día a día con calidez, funcionalidad y carácter. Usamos materiales nobles, técnicas responsables y principios de diseño atemporal para crear piezas que envejecen con gracia y se integran naturalmente a tu vida. Desde camas que invitan al descanso profundo hasta aparadores que cuentan su propia historia, cada objeto es una inversión en calidad, estética y conciencia.</p>
-                </div> 
-                <div>
-                    <p class="Multimedia">
-                        <video id="video" controls autoplay>
-                            <source src="assets/docs/Video institucional Hermanos Jota.mp4" type="video/mp4">
-                            <source src="movie.ogg" type="video/ogg">
-                            <img src="assets/img/logo.svg" alt="Video no soportado">
-                            Tu navegador no soporta el video mostrado
-                        </video>
-                    </p>
-                </div>                           
-            </article>   
-        </main>
+        <div class="background-main">
+            <main>
+                <article>
+                    <section>
+                        <h2 id="bienvenida">Bienvenidos a Mueblería Hermanos Jota</h2>
+                    </section>
+                    <section class="destacados">
+                        <h2>Productos destacados</h2>
+                        <ul id="destacados" class="product-grid" aria-live="polite"></ul>
+                    </section>
+
+                    <div class="historia">
+                        <h2>Nuestra historia</h2>
+                        <p>Hermanos Jota nace como el redescubrimiento de un arte olvidado: el de crear muebles que no solo cumplen una función, sino que despiertan emociones. Nuestra historia se teje entre la herencia de la artesanía tradicional y la innovación consciente del presente. Inspirados por el optimismo de los años 60 y guiados por los valores de sustentabilidad del 2025, cada pieza que diseñamos honra el pasado mientras abraza el futuro. No somos solo fabricantes de mobiliario: somos narradores de historias, guardianes de legado y creadores de belleza cotidiana.</p>
+                    </div>         
+                    <div class="que-ofrecemos">
+                        <h2>¿Qué ofrecemos?</h2>
+                        <p>Ofrecemos mucho más que muebles: ofrecemos experiencias que perduran. Cada producto de Hermanos Jota está pensado para acompañarte en tu día a día con calidez, funcionalidad y carácter. Usamos materiales nobles, técnicas responsables y principios de diseño atemporal para crear piezas que envejecen con gracia y se integran naturalmente a tu vida. Desde camas que invitan al descanso profundo hasta aparadores que cuentan su propia historia, cada objeto es una inversión en calidad, estética y conciencia.</p>
+                    </div> 
+                    <div>
+                        <p class="Multimedia">
+                            <video id="video" controls autoplay>
+                                <source src="assets/docs/Video institucional Hermanos Jota.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                <img src="assets/img/logo.svg" alt="Video no soportado">
+                                Tu navegador no soporta el video mostrado
+                            </video>
+                        </p>
+                    </div>                           
+                </article>   
+            </main>
+        </div>
+        
         <footer class="site-footer">
             <div class="footer-container">
                 <div class="footer-section">
@@ -81,9 +85,9 @@
                 <div class="footer-section">
                     <h3>Contacto</h3>
                     <ul>
-                        <li><strong>Dirección: </strong>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
+                        <li><p><strong>Dirección: </strong>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
                 Ciudad Autónoma de Buenos Aires, Argentina</li>
-                        <li><strong>Teléfono: </strong>+54 11 4567-8900</li>
+                        <li><strong>Teléfono: </strong>+54 11 4567-8900</p></li>
                         <li><strong>Email: </strong><a href="mailto:info@hermannosjota.com.ar">info@hermanosjota.com.ar</a></li>
                     </ul>
                 </div>

@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Hermanos Jota - Productos</title>
+		<link rel="stylesheet" href="assets/css/styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+			crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hermanos Jota - Productos</title>
-	<link rel="stylesheet" href="assets/css/styles.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+	<body class="productos">
+		<header class="site-header">
+			<div class="branding">
+				<a href="index.html" class="brand">
+					<img id="logo" src="assets/img/logo.svg" alt="Icono Hermanos Jota">
+				</a>
+			</div>
 
-<body class="productos">
-	<header class="site-header">
-		<div class="branding">
-			<a href="index.html" class="brand">
-				<img id="logo" src="assets/img/logo.svg" alt="Icono Hermanos Jota">
-			</a>
+			<nav class="site-nav" aria-label="Principal">
+				<a href="index.html">Inicio</a>
+				<a href="productos.html">Productos</a>
+				<a href="contacto.html">Contacto</a>
+				<a href="carrito.html">Carrito <span id="cart-count" aria-live="polite">0</span></a>
+
+				
+				<form class="search" action="productos.html" method="get" role="search">
+					<label for="q" class="visually-hidden">Buscar</label>
+					<input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
+					<button id="boton-buscar" type="submit">Buscar</button>
+				</form>
+			</nav>
+		</header>
+
+		<div class="background-main">
+			<main class="catalogo" id="contenido">
+				<ul id="lista-productos" class="product-grid" aria-live="polite"></ul>
+			</main>
 		</div>
+		<footer class="site-footer">
+			<div class="footer-container">
+				<div class="footer-section">
+					<h3>Enlaces</h3>
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="productos.html">Productos</a></li>
+						<li><a href="contacto.html">Contacto</a></li>
+					</ul>
+				</div>
 
-		<nav class="site-nav" aria-label="Principal">
-			<a href="index.html">Inicio</a>
-			<a href="productos.html">Productos</a>
-			<a href="contacto.html">Contacto</a>
-			<a href="carrito.html">
-				<i class="fas fa-shopping-cart"></i>Carrito<span id="cart-count" aria-live="polite">0</span>
-			</a>
+				<div class="footer-section">
+					<h3>Red social</h3>
+					<ul class="social-media">
+						<li><a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=0F722C37711BD6305A77E4FFDCE89EB4&f_hash=15268A94162158099670952E71AA8CBC"
+								target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+					</ul>
+				</div>
 
-
-			<form class="search" action="productos.html" method="get" role="search">
-				<label for="q" class="visually-hidden">Buscar</label>
-				<input id="q" name="q" type="search" placeholder="Buscar muebles…" value="">
-				<button id="boton-buscar" type="submit">Buscar</button>
-			</form>
-		</nav>
-	</header>
-
-
-	<main class="catalogo" id="contenido">
-		<ul id="lista-productos" class="product-grid" aria-live="polite"></ul>
-	</main>
-
-
-	<footer class="site-footer">
-		<div class="footer-container">
-			<div class="footer-section">
-				<h3>Enlaces</h3>
-				<ul>
-					<li><a href="index.html">Inicio</a></li>
-					<li><a href="productos.html">Productos</a></li>
-					<li><a href="contacto.html">Contacto</a></li>
-				</ul>
+				<div class="footer-section">
+					<h3>Contacto</h3>
+					<ul>
+						<li><strong>Dirección: </strong>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
+							Ciudad Autónoma de Buenos Aires, Argentina</li>
+						<li><strong>Teléfono: </strong>+54 11 4567-8900</li>
+						<li><strong>Email: </strong><a href="mailto:info@hermannosjota.com.ar">info@hermanosjota.com.ar</a>
+						</li>
+					</ul>
+				</div>
 			</div>
+		</footer>
 
-			<div class="footer-section">
-				<h3>Red social</h3>
-				<ul class="social-media">
-					<li><a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=0F722C37711BD6305A77E4FFDCE89EB4&f_hash=15268A94162158099670952E71AA8CBC"
-							target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
-				</ul>
-			</div>
+		<script src="assets/js/common.js"></script>
+		<script src="assets/js/productos.js"></script>
+		<script src="assets/js/producto.js"></script>
 
-			<div class="footer-section">
-				<h3>Contacto</h3>
-				<ul>
-					<li><strong>Dirección: </strong>Av. San Juan 2847,C1232AAB — Barrio de San Cristóbal,
-						Ciudad Autónoma de Buenos Aires, Argentina</li>
-					<li><strong>Teléfono: </strong>+54 11 4567-8900</li>
-					<li><strong>Email: </strong><a href="mailto:info@hermannosjota.com.ar">info@hermanosjota.com.ar</a>
-					</li>
-				</ul>
-			</div>
-
-		</div>
-	</footer>
-
-	<script src="assets/js/common.js"></script>
-	<script src="assets/js/productos.js"></script>
-	<script src="assets/js/producto.js"></script>
-
-</body>
-
+	</body>
 </html>
