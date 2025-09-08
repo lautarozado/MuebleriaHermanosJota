@@ -57,7 +57,11 @@ contratado a ustedes para construir su primera plataforma de e-commerce.</p>
 1. Clonar este repositorio.
 2. Abrir `index.html` en el navegador.  
    o visitar el deploy https://muebleria1212.netlify.app/
+   
+## 📸 Capturas
 
 
-
+<img width="1332" height="652" alt="Screenshot 2025-09-07 221232" src="https://github.com/user-attachments/assets/52b4d8f6-ade8-458e-91d9-75cc66d740be" />
+<img width="1325" height="639" alt="Screenshot 2025-09-07 221244" src="https://github.com/user-attachments/assets/f832d9f5-e894-4a1b-8dd5-3a75fe4e2017" />
+<img width="1331" height="644" alt="Screenshot 2025-09-07 221253" src="https://github.com/user-attachments/assets/2ca77cee-0fa4-493f-a938-215e8e1f1f43" />
 
