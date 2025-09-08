@@ -1,8 +1,15 @@
 // Este archivo contiene solo los datos de los productos y la lógica de renderizado de la página.
 // Toda la lógica del carrito (agregar, actualizar, etc.) se gestiona en common.js.
 
-// --------------------------------------------------------------------------------
-// Array de productos
+
+function ignorarVacios(obj) {
+  for (let key in obj) {
+    if (obj[key] === null) {
+      delete obj[key];
+    }
+    return obj;
+  }
+}
 const productos = [
   {
     "id": 1,
@@ -151,41 +158,59 @@ const productos = [
 ];
 
 
-// --------------------------------------------------------------------------------
-// CATÁLOGO: buscador + render dinámico con guard
+
+
+
+const obtenerProductos = () =>
+  new Promise(res => setTimeout(() => res(window.productos || productos), 200));
+
 document.addEventListener('DOMContentLoaded', () => {
-  const lista = document.getElementById('lista-productos');
+  const lista = document.getElementById('lista-productos');
+  if (!lista) return;
 
-  // Si no hay un elemento con el ID 'lista-productos', salir sin hacer nada
-  // Esto previene el error 'appendChild' en otras páginas
-  if (!lista) {
-    return;
-  }
+  const params = new URLSearchParams(window.location.search);
+  const q = (params.get('q') || '').toLowerCase().trim();
+  const qInput = document.getElementById('q');
+  if (qInput) qInput.value = params.get('q') || '';
 
-  const params = new URLSearchParams(window.location.search);
-  const q = (params.get('q') || '').toLowerCase().trim();
-  const qInput = document.getElementById('q');
-  if (qInput) qInput.value = params.get('q') || '';
+  const coincide = (p) => {
+    const nombre = (p.nombre || '').toLowerCase();
+    const desc = (p.descripcion || '').toLowerCase();
+    return !q || nombre.includes(q) || desc.includes(q);
+  };
 
-  const coincide = (p) => {
-    const nombre = (p.nombre || '').toLowerCase();
-    const desc = (p.descripcion || '').toLowerCase();
-    return !q || nombre.includes(q) || desc.includes(q);
-  };
+  const itemHTML = (p) => {
+    const id = Number.isFinite(p.id) ? p.id : 0;
+    return `
+      <li class="producto-item">
+        <img src="${p.imagen}" alt="${p.nombre}">
+        <h3><a href="producto.html?id=${encodeURIComponent(id)}">${p.nombre}</a></h3>
+        <p class="precio-producto"><strong>ARS</strong> $${p.precio}</p>
+        ${p.descripcion ? `<p class="descripcion-producto">${p.descripcion}</p>` : ''}
+        <button class="btn primary add-to-cart" type="button" data-id="${id}">
+          Agregar al Carrito
+        </button>
+      </li>
+    `;
+  };
 
-  const itemHTML = (p, idx) => {
-    const id = Number.isFinite(p.id) ? p.id : idx;
-    return `
-      <li class="producto-item">
-        <img src="${p.imagen}" alt="${p.nombre}">
-        <h3><a href="producto.html?id=${id}">${p.nombre}</a></h3>
-        <p class="precio-producto"><strong>ARS</strong> $${p.precio}</p>
-        ${p.descripcion ? `<p class="descripcion-producto">${p.descripcion}</p>` : ''}
-        <button class="btn primary" onclick="agregarAlCarrito(${id})">Agregar al Carrito</button>
-      </li>
-    `;
-  };
+  obtenerProductos().then(items => {
+    const visibles = items.filter(coincide);
+    lista.innerHTML = visibles.map(itemHTML).join('');
+  });
+});
 
-  const visibles = productos.filter(coincide);
-  lista.innerHTML = visibles.map((p, i) => itemHTML(p, i)).join('');
+
+document.addEventListener('click', (ev) => {
+  const btn = ev.target.closest('.add-to-cart');
+  if (!btn) return;
+  const id = Number(btn.dataset.id);
+  if (!Number.isFinite(id)) return;
+
+  if (window.addToCart) {
+    window.addToCart(id, 1);
+    alert('Producto agregado al carrito');
+  } else {
+    console.error('addToCart no está definido. ¿Incluiste assets/js/common.js antes?');
+  }
 });
