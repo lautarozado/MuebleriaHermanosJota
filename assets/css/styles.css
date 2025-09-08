@@ -27,7 +27,7 @@ body{
 main a {
   color: #080808; 
 }
-a h1 {
+.encabezado {
   text-decoration: none;
 }
 
