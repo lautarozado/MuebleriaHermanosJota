@@ -14,7 +14,8 @@
 header{
     background-color:#ffffff;
     color:#FFFFFF ;
-    height: 200px;
+    height: 25%;
+    width: 100%;
 }
 body{
     background-color:#F5E6D3;
@@ -61,13 +62,19 @@ main a {
 }
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: 1fr; /* Desde celular, los elementos del footer */
+                              /* Se pondran en una sola columna */
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   color: #F5E6D3;
   text-align: left;
+}
+@media (min-width: 901px) {
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en desktop */
+  }
 }
 .footer-section {
     min-width: 200px;
@@ -80,11 +87,6 @@ main a {
   flex-direction: column; 
   gap: 0.5rem;
 }
-@media (max-width: 900px) {
-  .footer-container {
-    grid-template-columns: 1fr; /* Desde celular, los elementos del footer */
-    }                            /* Se pondran en una sola columna */
-}  
 
 #logo{
     background-color: #FFFFFF;
@@ -178,8 +180,6 @@ body.productos .orden button {
   font-weight: 600;
   cursor: pointer;
 }
-
-
 
 /* ----- lista de productos ----- */
 .product-grid {
@@ -695,6 +695,4 @@ body.carrito .carrito-empty {
   body.carrito .contenido { padding: 20px 12px; }
   body.carrito .carrito-grid img { width: 60px; height: 60px; }
   body.carrito .carrito-grid li { padding: 10px; }
-}
-
-
+}}
