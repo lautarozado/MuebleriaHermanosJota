@@ -39,13 +39,13 @@ más allá de su localidad. Su presencia online se limita a una página de Insta
 esporádicamente. Para sobrevivir y crecer, han decidido dar el salto digital y los han
 contratado a ustedes para construir su primera plataforma de e-commerce.</p>
 
-## 🛠️ Tecnologías
+## Tecnologías
 - HTML5 semántico
 - CSS3 (Flexbox, Grid, responsive)
 - JavaScript (ES6, manipulación del DOM, localStorage)
 - GitHub Pages para el deploy
 
-- ## 🚀 Funcionalidades
+- ## Funcionalidades
 - Página de inicio con productos destacados.
 - Catálogo (`productos.html`) generado dinámicamente desde un array de objetos.
 - Detalle de producto (`producto.html`) identificado por parámetro `?id=`.
@@ -53,12 +53,12 @@ contratado a ustedes para construir su primera plataforma de e-commerce.</p>
 - Formulario de contacto con validación en cliente.
 - Diseño responsive con Flexbox y Grid.
 
-## ▶️ Cómo ejecutar
+## Cómo ejecutar
 1. Clonar este repositorio.
 2. Abrir `index.html` en el navegador.  
    o visitar el deploy https://muebleria1212.netlify.app/
    
-## 📸 Capturas
+## Capturas
 
 
 <img width="1332" height="652" alt="Screenshot 2025-09-07 221232" src="https://github.com/user-attachments/assets/52b4d8f6-ade8-458e-91d9-75cc66d740be" />
